@@ -89,25 +89,40 @@ export default function Login() {
 
   return (
   <>
-    <div className='container container-main'>
-    <form className='container p-4 text-center' onSubmit={submitHandler}> 
-        <div >
+    <div className='container-fluid container-main'>
+    <form className='p-4 ' onSubmit={submitHandler}> 
+        <div className='container-form text-center'>
+        <div className=''>
            <label>
               <span>Email</span><br />
-           <input type='text' name='email'/><br />
+           <input className='form-control email mt-2' type='text' name='email'/><br />
            </label>
         </div>
-        <div>
+        <div className=''>
            <label>
            <span>Contraseña</span><br />
-           <input type='password' name='password'/><br />
+           <input className='form-control password mt-2' type='password' name='password'/><br />
            </label>
         </div>
         <div className='mt-4'>
-             <button className='btn btn-outline-primary col-4' type='submit'>Ingresar</button>
-        </div>      
+             <button className='btn btn-outline-light col-8' type='submit'>Ingresar</button>
+        </div> 
+        </div>
     </form>
+         <div className='container d-flex '>
+            <div className='container-a'>
+                  <span className="loader"></span>
+            </div>
+            <div className='container-b'>
+                 <h3 >Impulsamos <br/>tu dinero <br/> hasta el <br/> Espacio</h3>
+                
+            </div>
+            </div>
+    
     </div>
+    
+ 
+    
   </>
   )
 }
