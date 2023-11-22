@@ -1,7 +1,12 @@
 import React from 'react'
 import axios from 'axios'
-import swal from '@sweetalert/with-react';
+import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
+
+
+import './login.css'
+
+
 
 export default function Login() {
     //para redireccionar
@@ -22,22 +27,30 @@ export default function Login() {
         
         //validando que los campos no esten vacios
         if (email === '' || password === ''){
-            swal(
-            <div>
-                <h2>los campos no pueden estar vacio</h2>
-            </div>
-            )
+            Swal.fire({
+                icon: "warning",
+                title: `Oops...`,
+                text: `Los campos no pueden estar vacios`,        
+            });
             return;
         }
         //validando que el email sea de tipo email y no string
         if (email !== '' && !regexEmail.test(email)){
-            console.log ("debes escribir una direccion de correo valida")
+            Swal.fire({
+                icon: "warning",
+                title: `Oops... `,
+                text: `La usuario ${email} no es un correo valido`,        
+            });
             return;
         }
         
         //caso validando que sea el usuario y la clave q indico
         if (email !=='challenge@alkemy.org'|| password !=='react'){
-            console.log('credenciales invalidas')
+            Swal.fire({
+                         icon: "error",
+                         title: "Oops... ",
+                         text: `El usuario ${email}o clave no son validos`,        
+            });
             return;
         }
         
@@ -47,12 +60,21 @@ export default function Login() {
         axios
             .post('http://challenge-react.alkemy.org', {email, password})
             .then(res=>{
-                swal({
-                    title: `Hola ${email}`,
-                    text: "Bienvenido al wallet",
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                      toast.onmouseenter = Swal.stopTimer;
+                      toast.onmouseleave = Swal.resumeTimer;
+                    }
+                  });
+                  Toast.fire({
                     icon: "success",
-                    button: "Aceptar",
-                })
+                    title: `Bienvenido/a <b>${email}</b> </br>Sesión iniciada correctamente`
+                  });
                 console.log(res.data);
                 // almacenar token en localStorage persistiendo el token cuando recibo la info de la api correcta
                 const tokenRecibido = res.data.token;
@@ -67,7 +89,7 @@ export default function Login() {
 
   return (
   <>
-    <h2>Formulario de Login</h2>
+    <div className='container container-main'>
     <form className='container p-4 text-center' onSubmit={submitHandler}> 
         <div >
            <label>
@@ -85,6 +107,7 @@ export default function Login() {
              <button className='btn btn-outline-primary col-4' type='submit'>Ingresar</button>
         </div>      
     </form>
+    </div>
   </>
   )
 }
