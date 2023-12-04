@@ -4,7 +4,10 @@ import Swal from 'sweetalert2'
 import axios from "axios";
 
 export default function Listado() {
+  let token = sessionStorage.getItem("token");
+  
   const [moviesList, setMoviesList] = useState([]);
+
 
   useEffect(() => {
     const endPoint =
@@ -26,9 +29,8 @@ return;
 
   console.log(moviesList);
 
-  // el navigate para navegar
-  //const navigate = useNavigate();
-  let token = localStorage.getItem("token");
+
+
 
   return (
     <>
@@ -37,8 +39,9 @@ return;
 
       {moviesList.map((oneMovie, idx) => {
         return (
-          <div className="row" key={idx}>
-            <div className="col-3 g-3">
+        
+          
+            <div className="col-3" key={idx}>
               <div className="card my-4">
                 <img
                   className="card-img-top"
@@ -47,16 +50,15 @@ return;
                 />
                 <div className="card-body">
                   <h4 className="card-title">
-                    {oneMovie.title.substring(0, 30)}...
+                    {oneMovie.title.substring(0, 10)}...
                   </h4>
-                  <p className="card-text">{oneMovie.overview}</p>
-                  <Link to="/" className="btn btn-primary">
+                  <p className="card-text">{oneMovie.overview.substring(0,20)}</p>
+                  <Link to={`/detalle?movieID=${oneMovie.id}`} className="btn btn-primary">
                     Ver detalle
                   </Link>
                 </div>
               </div>
             </div>
-          </div>
         );
       })}
     </>

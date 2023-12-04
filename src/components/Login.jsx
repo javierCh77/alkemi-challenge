@@ -76,15 +76,13 @@ export default function Login() {
                 console.log(res.data);
                 // almacenar token en localStorage persistiendo el token cuando recibo la info de la api correcta
                 const tokenRecibido = res.data.token;
-                localStorage.setItem('token', tokenRecibido)
+                sessionStorage.setItem('token', tokenRecibido)
                 //redireccion si tengo el token ok a la vista listado
-                navigate('/listado')
-              
-            })
-            
+                navigate('/listado')   
+            })    
     }
 
-  let token = localStorage.getItem('token');
+  let token = sessionStorage.getItem('token');
 
   return (
   <>
