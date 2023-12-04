@@ -1,10 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
-
-import './login.css'
 
 
 
@@ -86,10 +84,13 @@ export default function Login() {
             
     }
 
+  let token = localStorage.getItem('token');
 
   return (
   <>
-    <div className='container-fluid container-main'>
+    {/* validacion si tengo el token que me redireccione a listado */}
+    { token && <Navigate to='/listado'/>}
+    <div className='container-fluid'>
     <form className='p-4 ' onSubmit={submitHandler}> 
         <div className='container-form text-center'>
         <div className=''>
@@ -108,21 +109,8 @@ export default function Login() {
              <button className='btn btn-outline-light col-8' type='submit'>Ingresar</button>
         </div> 
         </div>
-    </form>
-         <div className='container d-flex '>
-            <div className='container-a'>
-                  <span className="loader"></span>
-            </div>
-            <div className='container-b'>
-                 <h3 >Impulsamos <br/>tu dinero <br/> hasta el <br/> Espacio</h3>
-                
-            </div>
-            </div>
-    
-    </div>
-    
- 
-    
+    </form>  
+    </div> 
   </>
   )
 }
