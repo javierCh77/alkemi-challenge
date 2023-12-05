@@ -5,17 +5,17 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function Resultados() {
+
+
+
   //////////////////// query string //////////////////
   let query = new URLSearchParams(window.location.search);
   let keyword = query.get("keyword");
-  
   //// DECLARO VARIABLE DONDE VOY A ALMACENAR LOS RESULTADOS DEL ENPOINT DE BUSQUEDA ///////////
   const [moviesResults, setMoviesResults] = useState([]);
 
   useEffect(() => {
-  
     const endPoint = `https://api.themoviedb.org/3/search/movie?api_key=6c5de2c59e0791eda5342f635d79ec8d&query=${keyword}`;
-
     axios.get(endPoint).then((response) => {
         const movieArray = response.data.results;
         /////// VALIDACION DE ERRORES /////////
@@ -29,15 +29,11 @@ export default function Resultados() {
       });
   },[keyword]);
 
-
-
-
+///////////////////////////////////////////////////////////////////////
 
   return (
     <>
-      <h2>
-        Buscaste: <em className="text-success">{keyword}</em>
-      </h2>
+      <h2>Buscaste: <em className="text-success">{keyword}</em></h2>
       {moviesResults.length === 0 && <h3>No hay resultados</h3> }
       
       <div className="row">

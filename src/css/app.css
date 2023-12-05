@@ -2,3 +2,18 @@ body{
 background-color: rgb(39, 41, 56);
 color:aliceblue;
 }
+
+.favourite-btn{
+    width: 30px;
+    height: 30px;
+    background-color: aliceblue;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    border:none;
+    font-size: 13px;
+}
