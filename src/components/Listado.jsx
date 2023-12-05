@@ -27,7 +27,6 @@ return;
     })
     }, [setMoviesList]);
 
-  console.log(moviesList);
 
 
 

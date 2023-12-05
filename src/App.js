@@ -8,6 +8,7 @@ import Header from './components/Header';
 import Contacto from './components/Contacto';
 import Footer from './components/Footer';
 import Detalle from './components/Detalle'
+import Resultados from './components/Resultados';
 
 
 
@@ -22,6 +23,7 @@ function App() {
               <Route path='/listado' Component={Listado}/> 
               <Route path='/detalle' Component={Detalle}/> 
               <Route path='/contacto' Component={Contacto}/> 
+              <Route path='/resultados' Component={Resultados}/> 
           </Routes>
           </div>
        </div>
