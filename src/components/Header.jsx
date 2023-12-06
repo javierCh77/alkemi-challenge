@@ -3,8 +3,19 @@ import { Link } from "react-router-dom";
 
 import logout from "../aseets/logout.svg";
 import Buscador from "./Buscador";
+import { useEffect, useState } from "react";
 
 export default function Header(props) {
+
+
+  const cerrar = () =>{
+    
+    sessionStorage.clear();
+  }
+  
+  
+  
+  
   return (
     <header>
       <nav class="navbar  navbar-dark bg-dark fixed-top">
@@ -71,7 +82,7 @@ export default function Header(props) {
                 <Buscador />
               </div>
               <div>
-                <button className="btn btn-outline-secondary">
+                <button className="btn btn-outline-secondary"  onClick={() =>sessionStorage.clear() || window.location.reload()}>
                   <img className="m-1" src={logout} alt="logout"></img>Cerrar
                   Sessión{" "}
                 </button>

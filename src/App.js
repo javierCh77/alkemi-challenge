@@ -82,8 +82,8 @@ function App() {
   return (
     <>
       <Header favorites={favorites}/>
-      <div className='container'> 
-      <div className="row">
+      <div className='container mt-4 p-4'> 
+      <div className="row mt-4">
           <Routes>
               <Route exact path='/' Component={Login} />
               <Route path='/listado' Component={ (props) => <Listado addOrRemoveFromFavs={addOrRemoveFromFavs}{...props} /> } /> 
