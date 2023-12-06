@@ -85,7 +85,7 @@ function App() {
       <div className='container'> 
       <div className="row">
           <Routes>
-              <Route exact path='/' Component={Login}/>
+              <Route exact path='/' Component={Login} />
               <Route path='/listado' Component={ (props) => <Listado addOrRemoveFromFavs={addOrRemoveFromFavs}{...props} /> } /> 
               <Route path='/detalle' Component={Detalle}/> 
               <Route path='/contacto' Component={Contacto}/> 

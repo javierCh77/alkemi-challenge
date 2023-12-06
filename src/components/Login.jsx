@@ -3,7 +3,7 @@ import axios from 'axios'
 import Swal from 'sweetalert2'
 import { useNavigate, Navigate } from "react-router-dom";
 
-
+import movie from '../aseets/movie.svg'
 
 
 export default function Login() {
@@ -88,23 +88,24 @@ export default function Login() {
   <>
     {/* validacion si tengo el token que me redireccione a listado */}
     { token && <Navigate to='/listado'/>}
-    <div className='container-fluid'>
-    <form className='p-4 ' onSubmit={submitHandler}> 
-        <div className='container-form text-center'>
+    <div className='container-login '>
+     <img src={movie} className='' alt=''/>
+    <form className='p-4 col-12' onSubmit={submitHandler}> 
+        <div className='col-12'>
         <div className=''>
-           <label>
+           <label className='col-8 col-md-8'>
               <span>Email</span><br />
-           <input className='form-control email mt-2' type='text' name='email'/><br />
+              <input className='form-control email mt-2' type='text' name='email'/><br />
            </label>
         </div>
-        <div className=''>
-           <label>
+        <div className='col-12'>
+           <label className='col-8 col-md-8'>
            <span>Contraseña</span><br />
-           <input className='form-control password mt-2' type='password' name='password'/><br />
+           <input className='form-control password mt-2 ' type='password' name='password'/><br />
            </label>
         </div>
         <div className='mt-4'>
-             <button className='btn btn-outline-light col-8' type='submit'>Ingresar</button>
+             <button className='btn btn-outline-light col-4' type='submit'>Ingresar</button>
         </div> 
         </div>
     </form>  

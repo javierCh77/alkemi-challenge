@@ -1,6 +1,11 @@
 body{
 background-color: rgb(39, 41, 56);
 color:aliceblue;
+display:flex;
+flex-direction: row;
+align-items: center!important;
+justify-content: center!important;
+text-align: center!important;
 }
 
 .favourite-btn{
@@ -16,4 +21,23 @@ color:aliceblue;
     top: 10px;
     border:none;
     font-size: 13px;
+}
+
+.container-login{
+margin-top: 50px;
+display: flex;
+flex-wrap: wrap;
+text-align: center!important;
+justify-content: center!important;
+align-items: center!important;
+}
+
+.title-nav{
+    background-color: rgb(39, 41, 56);
+    color: aliceblue;
+}
+
+.buscador{
+    margin-top: 10rem;
+    margin-bottom: 12rem;
 }
