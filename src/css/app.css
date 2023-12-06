@@ -32,12 +32,17 @@ justify-content: center!important;
 align-items: center!important;
 }
 
+.container-menu{
+display:flex;
+flex-direction: column;
+justify-content: space-around;
+text-align: center;
+align-items: center!important;
+justify-items: center!important;
+}
+
 .title-nav{
     background-color: rgb(39, 41, 56);
     color: aliceblue;
 }
 
-.buscador{
-    margin-top: 10rem;
-    margin-bottom: 12rem;
-}
