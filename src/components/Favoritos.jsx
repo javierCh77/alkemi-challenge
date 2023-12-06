@@ -22,7 +22,7 @@ export default function Favoritos(props) {
 
     {props.favorites.map((oneMovie, idx) => {
       return (
-        <div className="col-3" key={idx}>
+        <div className="col-12 col-md-3" key={idx}>
           <div className="card my-4">
             <img
               className="card-img-top"
