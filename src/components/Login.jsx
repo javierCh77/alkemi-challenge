@@ -56,7 +56,7 @@ export default function Login() {
         
         // aqui con axios cambiar el enpoint por el del backend ya sea local el host public
         axios
-            .post('https://challenge-react.alkemy.org', {email, password})
+            .post('http://challenge-react.alkemy.org', {email, password})
             .then(res=>{
                 const Toast = Swal.mixin({
                     toast: true,
