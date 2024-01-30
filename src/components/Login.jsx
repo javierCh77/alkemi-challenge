@@ -107,6 +107,10 @@ export default function Login() {
         <div className='mt-4'>
              <button className='btn btn-outline-light col-4' type='submit'>Ingresar</button>
         </div> 
+        
+        <div className='mt-4 btn btn-outline-warning'>
+          <h6>Email= challenge@alkemy.org | password= react</h6>
+        </div>
         </div>
     </form>  
     </div> 
