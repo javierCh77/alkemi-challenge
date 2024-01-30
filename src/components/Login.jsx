@@ -54,7 +54,7 @@ export default function Login() {
         
         console.log("ok estamos listo para enviar la informacion");
         
-        // aqui con axios cambiar el enpoint por el del backend ya sea local el host publico
+        // aqui con axios cambiar el enpoint por el del backend ya sea local el host public
         axios
             .post('http://challenge-react.alkemy.org', {email, password})
             .then(res=>{
