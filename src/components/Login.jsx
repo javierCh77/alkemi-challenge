@@ -43,7 +43,7 @@ export default function Login() {
         }
         
         //caso validando que sea el usuario y la clave q indico
-        if (email !=='test@gmail.com'|| password !=='password'){
+        if (email !=='challenge@alkemy.org'|| password !=='react'){
             Swal.fire({
                          icon: "error",
                          title: "Oops... ",
